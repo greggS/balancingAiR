@@ -17,7 +17,7 @@
 		ACBA11EF167CAC1E004897D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBA11EE167CAC1E004897D8 /* Default@2x.png */; };
 		ACBA11F1167CAC1E004897D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBA11F0167CAC1E004897D8 /* Default-568h@2x.png */; };
 		ACBA11F4167CAC1E004897D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA11F3167CAC1E004897D8 /* ViewController.m */; };
-		ACBA11F7167CAC1E004897D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBA11F5167CAC1E004897D8 /* ViewController.xib */; };
+		ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA1201167CB81A004897D8 /* QuartzView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,8 @@
 		ACBA11F0167CAC1E004897D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ACBA11F2167CAC1E004897D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		ACBA11F3167CAC1E004897D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		ACBA11F6167CAC1E004897D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		ACBA1200167CB81A004897D8 /* QuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzView.h; sourceTree = "<group>"; };
+		ACBA1201167CB81A004897D8 /* QuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +88,8 @@
 				ACBA11EA167CAC1E004897D8 /* AppDelegate.m */,
 				ACBA11F2167CAC1E004897D8 /* ViewController.h */,
 				ACBA11F3167CAC1E004897D8 /* ViewController.m */,
-				ACBA11F5167CAC1E004897D8 /* ViewController.xib */,
+				ACBA1200167CB81A004897D8 /* QuartzView.h */,
+				ACBA1201167CB81A004897D8 /* QuartzView.m */,
 				ACBA11E1167CAC1E004897D8 /* Supporting Files */,
 			);
 			path = Balancing;
@@ -162,7 +164,6 @@
 				ACBA11ED167CAC1E004897D8 /* Default.png in Resources */,
 				ACBA11EF167CAC1E004897D8 /* Default@2x.png in Resources */,
 				ACBA11F1167CAC1E004897D8 /* Default-568h@2x.png in Resources */,
-				ACBA11F7167CAC1E004897D8 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +177,7 @@
 				ACBA11E7167CAC1E004897D8 /* main.m in Sources */,
 				ACBA11EB167CAC1E004897D8 /* AppDelegate.m in Sources */,
 				ACBA11F4167CAC1E004897D8 /* ViewController.m in Sources */,
+				ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +190,6 @@
 				ACBA11E4167CAC1E004897D8 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		ACBA11F5167CAC1E004897D8 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACBA11F6167CAC1E004897D8 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
