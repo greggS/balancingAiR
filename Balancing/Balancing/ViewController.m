@@ -35,15 +35,17 @@
 
 - (void)presentAddPopover:(UIBarButtonItem *)sender
 {
-    AddPopoverFirstTableViewController *addPopoverFTVC = [AddPopoverFirstTableViewController new];
-    UIPopoverController *addPopover = [[UIPopoverController alloc]
+    if (!self.addPopoverController.isPopoverVisible)
+    {
+        AddPopoverFirstTableViewController *addPopoverFTVC = [AddPopoverFirstTableViewController new];
+        UIPopoverController *addPopover = [[UIPopoverController alloc]
                                      initWithContentViewController:addPopoverFTVC];
     
-    // Store the popover in a custom property for later use.
-    self.addPopoverController = addPopover;
+        self.addPopoverController = addPopover;
     
-    [self.addPopoverController presentPopoverFromBarButtonItem:sender
+        [self.addPopoverController presentPopoverFromBarButtonItem:sender
                                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
 }
 
 @end
