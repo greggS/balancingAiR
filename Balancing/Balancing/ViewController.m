@@ -7,10 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "AddPopoverFirstTableViewController.h"
 #import "QuartzView.h"
 
 @interface ViewController ()
+{
+    UIPopoverController *addPopoverController;
+}
 
+@property (nonatomic, retain) UIPopoverController *addPopoverController;
 @end
 
 @implementation ViewController
@@ -19,12 +24,26 @@
 {
     [super viewDidLoad];
     self.view = [QuartzView new];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(presentAddPopover:)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)presentAddPopover:(UIBarButtonItem *)sender
+{
+    AddPopoverFirstTableViewController *addPopoverFTVC = [AddPopoverFirstTableViewController new];
+    UIPopoverController *addPopover = [[UIPopoverController alloc]
+                                     initWithContentViewController:addPopoverFTVC];
+    
+    // Store the popover in a custom property for later use.
+    self.addPopoverController = addPopover;
+    
+    [self.addPopoverController presentPopoverFromBarButtonItem:sender
+                                   permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 @end

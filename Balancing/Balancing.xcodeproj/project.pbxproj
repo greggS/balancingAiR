@@ -18,6 +18,7 @@
 		ACBA11F1167CAC1E004897D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBA11F0167CAC1E004897D8 /* Default-568h@2x.png */; };
 		ACBA11F4167CAC1E004897D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA11F3167CAC1E004897D8 /* ViewController.m */; };
 		ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA1201167CB81A004897D8 /* QuartzView.m */; };
+		ACBA120A167D4D6C004897D8 /* AddPopoverFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		ACBA11F3167CAC1E004897D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ACBA1200167CB81A004897D8 /* QuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzView.h; sourceTree = "<group>"; };
 		ACBA1201167CB81A004897D8 /* QuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzView.m; sourceTree = "<group>"; };
+		ACBA1208167D4D6C004897D8 /* AddPopoverFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverFirstTableViewController.h; sourceTree = "<group>"; };
+		ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverFirstTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +89,12 @@
 			children = (
 				ACBA11E9167CAC1E004897D8 /* AppDelegate.h */,
 				ACBA11EA167CAC1E004897D8 /* AppDelegate.m */,
-				ACBA11F2167CAC1E004897D8 /* ViewController.h */,
-				ACBA11F3167CAC1E004897D8 /* ViewController.m */,
 				ACBA1200167CB81A004897D8 /* QuartzView.h */,
 				ACBA1201167CB81A004897D8 /* QuartzView.m */,
+				ACBA11F2167CAC1E004897D8 /* ViewController.h */,
+				ACBA11F3167CAC1E004897D8 /* ViewController.m */,
+				ACBA1208167D4D6C004897D8 /* AddPopoverFirstTableViewController.h */,
+				ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */,
 				ACBA11E1167CAC1E004897D8 /* Supporting Files */,
 			);
 			path = Balancing;
@@ -178,6 +183,7 @@
 				ACBA11EB167CAC1E004897D8 /* AppDelegate.m in Sources */,
 				ACBA11F4167CAC1E004897D8 /* ViewController.m in Sources */,
 				ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */,
+				ACBA120A167D4D6C004897D8 /* AddPopoverFirstTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +294,7 @@
 				ACBA11FC167CAC1E004897D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
