@@ -1,26 +1,24 @@
 //
-//  AddPopoverFirstTableViewController.m
+//  AddPopoverSecondTableViewController.m
 //  Balancing
 //
-//  Created by Grzegorz Krukiewicz-Gacek on 16.12.2012.
+//  Created by Grzegorz Krukiewicz-Gacek on 17.12.2012.
 //  Copyright (c) 2012 AGDev. All rights reserved.
 //
 
-#import "AddPopoverFirstTableViewController.h"
 #import "AddPopoverSecondTableViewController.h"
 
-@interface AddPopoverFirstTableViewController ()
+@interface AddPopoverSecondTableViewController ()
 
 @end
 
-@implementation AddPopoverFirstTableViewController
+@implementation AddPopoverSecondTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.tableTitlesArray = [NSArray arrayWithObjects:@"Dodaj pręt", @"Dodaj podporę", @"Ustaw właściwości elementu",
-                                 nil];
+        // Custom initialization
     }
     return self;
 }
@@ -51,7 +49,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tableTitlesArray count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,20 +58,22 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    cell.textLabel.text = [self.tableTitlesArray objectAtIndex:indexPath.row];
     
-    return cell;
-
-}
+    return cell;}
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AddPopoverSecondTableViewController *addPopoverSTVC = [AddPopoverSecondTableViewController new];
-    [self.navigationController pushViewController:addPopoverSTVC animated:YES];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end

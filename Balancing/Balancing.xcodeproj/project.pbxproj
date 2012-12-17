@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */; };
 		ACBA11DB167CAC1D004897D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DA167CAC1D004897D8 /* UIKit.framework */; };
 		ACBA11DD167CAC1D004897D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DC167CAC1D004897D8 /* Foundation.framework */; };
 		ACBA11DF167CAC1D004897D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DE167CAC1D004897D8 /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverSecondTableViewController.h; sourceTree = "<group>"; };
+		ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverSecondTableViewController.m; sourceTree = "<group>"; };
 		ACBA11D6167CAC1D004897D8 /* Balancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACBA11DA167CAC1D004897D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ACBA11DC167CAC1D004897D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +98,8 @@
 				ACBA11F3167CAC1E004897D8 /* ViewController.m */,
 				ACBA1208167D4D6C004897D8 /* AddPopoverFirstTableViewController.h */,
 				ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */,
+				ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */,
+				ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */,
 				ACBA11E1167CAC1E004897D8 /* Supporting Files */,
 			);
 			path = Balancing;
@@ -184,6 +189,7 @@
 				ACBA11F4167CAC1E004897D8 /* ViewController.m in Sources */,
 				ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */,
 				ACBA120A167D4D6C004897D8 /* AddPopoverFirstTableViewController.m in Sources */,
+				ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
