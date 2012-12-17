@@ -21,6 +21,7 @@
     if (self) {
         self.tableTitlesArray = [NSArray arrayWithObjects:@"Dodaj pręt", @"Dodaj podporę", @"Ustaw właściwości elementu",
                                  nil];
+        self.title = @"Tworzenie schematu";
     }
     return self;
 }
