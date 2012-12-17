@@ -37,10 +37,13 @@
 {
     if (!self.addPopoverController.isPopoverVisible)
     {
-        AddPopoverFirstTableViewController *addPopoverFTVC = [AddPopoverFirstTableViewController new];
+        AddPopoverFirstTableViewController *addPopoverFTVC = [[AddPopoverFirstTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        addPopoverFTVC.contentSizeForViewInPopover = CGSizeMake(300, 400);
+        UINavigationController *nVC = [[UINavigationController alloc] initWithRootViewController:addPopoverFTVC];
         UIPopoverController *addPopover = [[UIPopoverController alloc]
-                                     initWithContentViewController:addPopoverFTVC];
-    
+                                     initWithContentViewController: nVC];
+
+        
         self.addPopoverController = addPopover;
     
         [self.addPopoverController presentPopoverFromBarButtonItem:sender

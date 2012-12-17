@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface AddPopoverFirstTableViewController : UITableViewController
+{
+    NSArray *tableTitlesArray;
+}
+
+@property (nonatomic, retain) NSArray *tableTitlesArray;
 
 @end
