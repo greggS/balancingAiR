@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC6F951D1685059800C4FC7F /* Model.xcdatamodeld */; };
 		ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */; };
 		ACBA11DB167CAC1D004897D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DA167CAC1D004897D8 /* UIKit.framework */; };
 		ACBA11DD167CAC1D004897D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DC167CAC1D004897D8 /* Foundation.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC6F951E1685059800C4FC7F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverSecondTableViewController.h; sourceTree = "<group>"; };
 		ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverSecondTableViewController.m; sourceTree = "<group>"; };
 		ACBA11D6167CAC1D004897D8 /* Balancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				ACBA11EC167CAC1E004897D8 /* Default.png */,
 				ACBA11EE167CAC1E004897D8 /* Default@2x.png */,
 				ACBA11F0167CAC1E004897D8 /* Default-568h@2x.png */,
+				AC6F951D1685059800C4FC7F /* Model.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */,
 				ACBA120A167D4D6C004897D8 /* AddPopoverFirstTableViewController.m in Sources */,
 				ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */,
+				AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +307,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC6F951D1685059800C4FC7F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC6F951E1685059800C4FC7F /* Model.xcdatamodel */,
+			);
+			currentVersion = AC6F951E1685059800C4FC7F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACBA11CD167CAC1D004897D8 /* Project object */;
 }
