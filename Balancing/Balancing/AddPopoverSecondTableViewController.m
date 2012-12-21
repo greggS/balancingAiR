@@ -18,7 +18,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+      
     }
     return self;
 }
@@ -49,7 +49,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.tableTitlesArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,7 +61,10 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    return cell;}
+    cell.textLabel.text = [self.tableTitlesArray objectAtIndex:indexPath.row];
+    
+    return cell;
+}
 
 #pragma mark - Table view delegate
 

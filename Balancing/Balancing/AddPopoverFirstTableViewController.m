@@ -74,6 +74,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AddPopoverSecondTableViewController *addPopoverSTVC = [AddPopoverSecondTableViewController new];
+    addPopoverSTVC.contentSizeForViewInPopover = CGSizeMake(320, 132);
+    
+    switch (indexPath.row) {
+        case 0:
+            addPopoverSTVC.tableTitlesArray = [NSArray arrayWithObjects:@"Wprowadzanie współrzędnych", @"Zaznaczanie punktów", nil];
+            break;
+            
+        default:
+            break;
+    }
     [self.navigationController pushViewController:addPopoverSTVC animated:YES];
 }
 

@@ -38,7 +38,7 @@
     if (!self.addPopoverController.isPopoverVisible)
     {
         AddPopoverFirstTableViewController *addPopoverFTVC = [[AddPopoverFirstTableViewController alloc] initWithStyle:UITableViewStylePlain];
-        addPopoverFTVC.contentSizeForViewInPopover = CGSizeMake(300, 400);
+        addPopoverFTVC.contentSizeForViewInPopover = CGSizeMake(320, 132);
         UINavigationController *nVC = [[UINavigationController alloc] initWithRootViewController:addPopoverFTVC];
         UIPopoverController *addPopover = [[UIPopoverController alloc]
                                      initWithContentViewController: nVC];
