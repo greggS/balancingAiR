@@ -23,11 +23,24 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    //drawing x and y axis
     CGContextSetLineWidth(context, 2.0);
-    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     
-    CGContextMoveToPoint(context, 0, 0);
-    CGContextAddLineToPoint(context, 200, 200);
+    //y
+    CGContextMoveToPoint(context, self.frame.size.width/2, self.frame.size.height/2);
+    CGContextAddLineToPoint(context, self.frame.size.width/2, self.frame.size.height/2 -50);
+    CGContextAddLineToPoint(context, self.frame.size.width/2 -5, self.frame.size.height/2 -45);
+    CGContextAddLineToPoint(context, self.frame.size.width/2 +5, self.frame.size.height/2 -45);
+    CGContextAddLineToPoint(context, self.frame.size.width/2, self.frame.size.height/2 -50);
+    CGContextStrokePath(context);
+    
+    //x
+    CGContextMoveToPoint(context, self.frame.size.width/2, self.frame.size.height/2);
+    CGContextAddLineToPoint(context, self.frame.size.width/2 +50, self.frame.size.height/2);
+    CGContextAddLineToPoint(context, self.frame.size.width/2 +45, self.frame.size.height/2 -5);
+    CGContextAddLineToPoint(context, self.frame.size.width/2 +45, self.frame.size.height/2 +5);
+    CGContextAddLineToPoint(context, self.frame.size.width/2 +50, self.frame.size.height/2);
     CGContextStrokePath(context);
 }
 
