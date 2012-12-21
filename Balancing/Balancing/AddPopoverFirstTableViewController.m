@@ -80,6 +80,10 @@
         case 0:
             addPopoverSTVC.tableTitlesArray = [NSArray arrayWithObjects:@"Wprowadzanie współrzędnych", @"Zaznaczanie punktów", nil];
             break;
+        case 1:
+            addPopoverSTVC.tableTitlesArray = [NSArray arrayWithObjects:@"Przegubowa przesówna", @"Przegubowa nieprzesówna", @"Płaska przesówna", @"Płaska nieprzesówna", nil];
+            addPopoverSTVC.contentSizeForViewInPopover = CGSizeMake(320, 176);
+            break;
             
         default:
             break;
