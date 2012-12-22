@@ -8,6 +8,8 @@
 
 #import "AddPopoverFirstTableViewController.h"
 #import "AddPopoverSecondTableViewController.h"
+#import "RodDetailsViewController.h"
+#import "SupportDetailsViewController.h"
 
 @interface AddPopoverFirstTableViewController ()
 
@@ -19,9 +21,9 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.tableTitlesArray = [NSArray arrayWithObjects:@"Dodaj pręt", @"Dodaj podporę", @"Ustaw właściwości elementu",
+        self.tableTitlesArray = [NSArray arrayWithObjects:@"Add rod", @"Add support", @"Set element properties",
                                  nil];
-        self.title = @"Tworzenie schematu";
+        self.title = @"Schematic Drawing";
     }
     return self;
 }
@@ -61,8 +63,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    if (indexPath.row == 0 || indexPath.row == 1)
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    else
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     cell.textLabel.text = [self.tableTitlesArray objectAtIndex:indexPath.row];
     
     return cell;
@@ -75,14 +81,20 @@
 {
     AddPopoverSecondTableViewController *addPopoverSTVC = [AddPopoverSecondTableViewController new];
     addPopoverSTVC.contentSizeForViewInPopover = CGSizeMake(320, 132);
+    RodDetailsViewController *rdVC = [RodDetailsViewController new];
+    rdVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    SupportDetailsViewController *sdVC = [SupportDetailsViewController new];
+    sdVC.modalPresentationStyle = UIModalPresentationFormSheet;
     
     switch (indexPath.row) {
         case 0:
-            addPopoverSTVC.tableTitlesArray = [NSArray arrayWithObjects:@"Wprowadzanie współrzędnych", @"Zaznaczanie punktów", nil];
+            [self presentViewController:rdVC animated:YES completion:nil];
+            [self.addPopoverController dismissPopoverAnimated:YES];
             break;
         case 1:
-            addPopoverSTVC.tableTitlesArray = [NSArray arrayWithObjects:@"Przegubowa przesówna", @"Przegubowa nieprzesówna", @"Płaska przesówna", @"Płaska nieprzesówna", nil];
-            addPopoverSTVC.contentSizeForViewInPopover = CGSizeMake(320, 176);
+            [self presentViewController:sdVC animated:YES completion:nil];
+            [self.addPopoverController dismissPopoverAnimated:YES];
+//            addPopoverSTVC.tableTitlesArray = [NSArray arrayWithObjects:@"Przegubowa przesówna", @"Przegubowa nieprzesówna", @"Płaska przesówna", @"Płaska nieprzesówna", nil];
             break;
             
         default:

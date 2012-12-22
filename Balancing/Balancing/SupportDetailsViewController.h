@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SupportDetailsViewController : UIViewController
+@interface SupportDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    UITableView *tableView;
+    UIButton *rollerSupportButton;
+    UIButton *pinnedSupportButton;
+    BOOL rollerSupport;
+}
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIButton *rollerSupportButton;
+@property (nonatomic, retain) IBOutlet UIButton *pinnedSupportButton;
+@property (nonatomic) BOOL rollerSupport;
+
+- (IBAction)rollerSupportButtonTouched:(id)sender;
+- (IBAction)pinnedSupportButtonTouched:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

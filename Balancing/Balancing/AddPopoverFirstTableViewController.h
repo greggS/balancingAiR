@@ -11,8 +11,10 @@
 @interface AddPopoverFirstTableViewController : UITableViewController
 {
     NSArray *tableTitlesArray;
+    UIPopoverController *addPopoverController;
 }
 
 @property (nonatomic, retain) NSArray *tableTitlesArray;
+@property (nonatomic, retain) UIPopoverController *addPopoverController;
 
 @end

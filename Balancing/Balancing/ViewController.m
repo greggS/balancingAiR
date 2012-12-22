@@ -12,10 +12,8 @@
 
 @interface ViewController ()
 {
-    UIPopoverController *addPopoverController;
 }
 
-@property (nonatomic, retain) UIPopoverController *addPopoverController;
 @end
 
 @implementation ViewController
@@ -45,6 +43,8 @@
 
         
         self.addPopoverController = addPopover;
+        
+        addPopoverFTVC.addPopoverController = self.addPopoverController;
     
         [self.addPopoverController presentPopoverFromBarButtonItem:sender
                                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

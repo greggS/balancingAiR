@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"Rod properties";
     }
     return self;
 }
@@ -29,10 +29,29 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)switchSwitched:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (self.massShiftSwitch.on)
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.massShiftLabel.alpha = 1;
+            self.massShiftTextField.alpha = 1;
+        } completion:nil];
+        self.massShiftTextField.enabled = YES;
+    }
+    else
+    {
+        self.massShiftTextField.enabled = NO;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.massShiftLabel.alpha = 0.2;
+            self.massShiftTextField.alpha = 0.2;
+        } completion:nil];
+    }
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
