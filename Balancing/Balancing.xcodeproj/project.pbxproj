@@ -11,6 +11,10 @@
 		AC6F95391685C7C200C4FC7F /* Rod.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F95381685C7C200C4FC7F /* Rod.m */; };
 		AC6F953F1685C7F100C4FC7F /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F953E1685C7F100C4FC7F /* Support.m */; };
 		AC6F95431685C82700C4FC7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6F95421685C82700C4FC7F /* CoreData.framework */; };
+		AC6F95491685CD9F00C4FC7F /* RodDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F95471685CD9F00C4FC7F /* RodDetailsViewController.m */; };
+		AC6F954A1685CD9F00C4FC7F /* RodDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6F95481685CD9F00C4FC7F /* RodDetailsViewController.xib */; };
+		AC6F954E1685CDDE00C4FC7F /* SupportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F954C1685CDDE00C4FC7F /* SupportDetailsViewController.m */; };
+		AC6F954F1685CDDE00C4FC7F /* SupportDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6F954D1685CDDE00C4FC7F /* SupportDetailsViewController.xib */; };
 		ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */; };
 		ACBA11DB167CAC1D004897D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DA167CAC1D004897D8 /* UIKit.framework */; };
 		ACBA11DD167CAC1D004897D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DC167CAC1D004897D8 /* Foundation.framework */; };
@@ -33,6 +37,12 @@
 		AC6F953D1685C7F100C4FC7F /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
 		AC6F953E1685C7F100C4FC7F /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
 		AC6F95421685C82700C4FC7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AC6F95461685CD9F00C4FC7F /* RodDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RodDetailsViewController.h; sourceTree = "<group>"; };
+		AC6F95471685CD9F00C4FC7F /* RodDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RodDetailsViewController.m; sourceTree = "<group>"; };
+		AC6F95481685CD9F00C4FC7F /* RodDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RodDetailsViewController.xib; sourceTree = "<group>"; };
+		AC6F954B1685CDDE00C4FC7F /* SupportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportDetailsViewController.h; sourceTree = "<group>"; };
+		AC6F954C1685CDDE00C4FC7F /* SupportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportDetailsViewController.m; sourceTree = "<group>"; };
+		AC6F954D1685CDDE00C4FC7F /* SupportDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDetailsViewController.xib; sourceTree = "<group>"; };
 		ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverSecondTableViewController.h; sourceTree = "<group>"; };
 		ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverSecondTableViewController.m; sourceTree = "<group>"; };
 		ACBA11D6167CAC1D004897D8 /* Balancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +92,30 @@
 			name = DataClasses;
 			sourceTree = "<group>";
 		};
+		AC6F95451685CD1100C4FC7F /* AddPopoverViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACBA1208167D4D6C004897D8 /* AddPopoverFirstTableViewController.h */,
+				ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */,
+				ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */,
+				ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */,
+			);
+			name = AddPopoverViewControllers;
+			sourceTree = "<group>";
+		};
+		AC6F95501685CDE600C4FC7F /* DetailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC6F95461685CD9F00C4FC7F /* RodDetailsViewController.h */,
+				AC6F95471685CD9F00C4FC7F /* RodDetailsViewController.m */,
+				AC6F95481685CD9F00C4FC7F /* RodDetailsViewController.xib */,
+				AC6F954B1685CDDE00C4FC7F /* SupportDetailsViewController.h */,
+				AC6F954C1685CDDE00C4FC7F /* SupportDetailsViewController.m */,
+				AC6F954D1685CDDE00C4FC7F /* SupportDetailsViewController.xib */,
+			);
+			name = DetailViewControllers;
+			sourceTree = "<group>";
+		};
 		ACBA11CB167CAC1D004897D8 = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +154,8 @@
 				ACBA1201167CB81A004897D8 /* QuartzView.m */,
 				ACBA11F2167CAC1E004897D8 /* ViewController.h */,
 				ACBA11F3167CAC1E004897D8 /* ViewController.m */,
-				ACBA1208167D4D6C004897D8 /* AddPopoverFirstTableViewController.h */,
-				ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */,
-				ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */,
-				ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */,
+				AC6F95501685CDE600C4FC7F /* DetailViewControllers */,
+				AC6F95451685CD1100C4FC7F /* AddPopoverViewControllers */,
 				ACBA11E1167CAC1E004897D8 /* Supporting Files */,
 			);
 			path = Balancing;
@@ -199,6 +231,8 @@
 				ACBA11ED167CAC1E004897D8 /* Default.png in Resources */,
 				ACBA11EF167CAC1E004897D8 /* Default@2x.png in Resources */,
 				ACBA11F1167CAC1E004897D8 /* Default-568h@2x.png in Resources */,
+				AC6F954A1685CD9F00C4FC7F /* RodDetailsViewController.xib in Resources */,
+				AC6F954F1685CDDE00C4FC7F /* SupportDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +252,8 @@
 				AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */,
 				AC6F95391685C7C200C4FC7F /* Rod.m in Sources */,
 				AC6F953F1685C7F100C4FC7F /* Support.m in Sources */,
+				AC6F95491685CD9F00C4FC7F /* RodDetailsViewController.m in Sources */,
+				AC6F954E1685CDDE00C4FC7F /* SupportDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
