@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC6F951D1685059800C4FC7F /* Model.xcdatamodeld */; };
+		AC6F95391685C7C200C4FC7F /* Rod.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F95381685C7C200C4FC7F /* Rod.m */; };
+		AC6F953F1685C7F100C4FC7F /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F953E1685C7F100C4FC7F /* Support.m */; };
+		AC6F95431685C82700C4FC7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6F95421685C82700C4FC7F /* CoreData.framework */; };
 		ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */; };
 		ACBA11DB167CAC1D004897D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DA167CAC1D004897D8 /* UIKit.framework */; };
 		ACBA11DD167CAC1D004897D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DC167CAC1D004897D8 /* Foundation.framework */; };
@@ -25,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		AC6F951E1685059800C4FC7F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		AC6F95371685C7C200C4FC7F /* Rod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rod.h; sourceTree = "<group>"; };
+		AC6F95381685C7C200C4FC7F /* Rod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rod.m; sourceTree = "<group>"; };
+		AC6F953D1685C7F100C4FC7F /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
+		AC6F953E1685C7F100C4FC7F /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
+		AC6F95421685C82700C4FC7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverSecondTableViewController.h; sourceTree = "<group>"; };
 		ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverSecondTableViewController.m; sourceTree = "<group>"; };
 		ACBA11D6167CAC1D004897D8 /* Balancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6F95431685C82700C4FC7F /* CoreData.framework in Frameworks */,
 				ACBA11DB167CAC1D004897D8 /* UIKit.framework in Frameworks */,
 				ACBA11DD167CAC1D004897D8 /* Foundation.framework in Frameworks */,
 				ACBA11DF167CAC1D004897D8 /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +71,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC6F95441685C85900C4FC7F /* DataClasses */ = {
+			isa = PBXGroup;
+			children = (
+				AC6F95371685C7C200C4FC7F /* Rod.h */,
+				AC6F95381685C7C200C4FC7F /* Rod.m */,
+				AC6F953D1685C7F100C4FC7F /* Support.h */,
+				AC6F953E1685C7F100C4FC7F /* Support.m */,
+			);
+			name = DataClasses;
+			sourceTree = "<group>";
+		};
 		ACBA11CB167CAC1D004897D8 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +102,7 @@
 		ACBA11D9167CAC1D004897D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC6F95421685C82700C4FC7F /* CoreData.framework */,
 				ACBA11DA167CAC1D004897D8 /* UIKit.framework */,
 				ACBA11DC167CAC1D004897D8 /* Foundation.framework */,
 				ACBA11DE167CAC1D004897D8 /* CoreGraphics.framework */,
@@ -92,6 +113,7 @@
 		ACBA11E0167CAC1D004897D8 /* Balancing */ = {
 			isa = PBXGroup;
 			children = (
+				AC6F95441685C85900C4FC7F /* DataClasses */,
 				ACBA11E9167CAC1E004897D8 /* AppDelegate.h */,
 				ACBA11EA167CAC1E004897D8 /* AppDelegate.m */,
 				ACBA1200167CB81A004897D8 /* QuartzView.h */,
@@ -194,6 +216,8 @@
 				ACBA120A167D4D6C004897D8 /* AddPopoverFirstTableViewController.m in Sources */,
 				ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */,
 				AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */,
+				AC6F95391685C7C200C4FC7F /* Rod.m in Sources */,
+				AC6F953F1685C7F100C4FC7F /* Support.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
