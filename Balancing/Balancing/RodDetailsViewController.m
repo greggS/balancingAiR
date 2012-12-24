@@ -7,6 +7,8 @@
 //
 
 #import "RodDetailsViewController.h"
+#import "Rod.h"
+#import "AppDelegate.h"
 
 @interface RodDetailsViewController ()
 
@@ -46,6 +48,92 @@
             self.massShiftLabel.alpha = 0.2;
             self.massShiftTextField.alpha = 0.2;
         } completion:nil];
+    }
+}
+
+- (IBAction)done:(id)sender
+{
+    NSString *massString = self.massTextField.text;
+    NSLog (@"%@", massString);
+    float mass = 0;
+    //mass will remain 0 if text field is empty
+    if (![massString isEqualToString:@""])
+    {
+        mass = [massString floatValue];
+        NSLog (@"%f", mass);
+    }
+    
+    //check if mass is not 0 or less
+    if (mass > 0)                           
+    {
+        float aX;
+        float aY;
+        float bX;
+        float bY;
+        
+        if (![self.aXTextField.text isEqualToString: @""])
+        {
+            NSString *aXString = self.aXTextField.text;
+            aX = [aXString floatValue];
+        }
+        if (![self.aYTextField.text isEqualToString: @""])
+        {
+            NSString *aYString = self.aYTextField.text;
+            aY = [aYString floatValue];
+        }
+        if (![self.bXTextField.text isEqualToString: @""])
+        {
+            NSString *bXString = self.bXTextField.text;
+            bX = [bXString floatValue];
+        }
+        if (![self.bYTextField.text isEqualToString: @""])
+        {
+            NSString *bYString = self.bYTextField.text;
+            bY = [bYString floatValue];
+        }
+        
+        //saving the rod with CoreData
+        AppDelegate *appDelegate =
+        [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        Rod *newRod = [NSEntityDescription
+                                          insertNewObjectForEntityForName:@"Rod"
+                                          inManagedObjectContext:context];
+        newRod.aX = [NSNumber numberWithFloat:aX];
+        newRod.aY = [NSNumber numberWithFloat:aY];
+        newRod.bX = [NSNumber numberWithFloat:bX];
+        newRod.bY = [NSNumber numberWithFloat:bY];
+        newRod.mass = [NSNumber numberWithFloat:mass];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+        // Test listing all FailedBankInfos from the store
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
+                                                  inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        for (Rod *rod in fetchedObjects) {
+            NSLog (@"Created new rod with parameters:");
+            NSLog (@"aX: %@", rod.aX);
+            NSLog (@"aY: %@", rod.aY);
+            NSLog (@"bX: %@", rod.bX);
+            NSLog (@"bY: %@", rod.bY);
+            NSLog (@"Mass: %@", rod.mass);
+        }
+        
+    }
+    else
+    {
+        UIAlertView *noMassAlert = [[UIAlertView alloc] initWithTitle:@"Specify the mass!"
+                                                              message:@"Mass must be specified and greater than 0 to continue"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil, nil];
+        [noMassAlert show];
     }
 }
 

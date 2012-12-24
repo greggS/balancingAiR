@@ -2,7 +2,7 @@
 //  Rod.m
 //  Balancing
 //
-//  Created by Grzegorz Krukiewicz-Gacek on 22.12.2012.
+//  Created by Grzegorz Krukiewicz-Gacek on 24.12.2012.
 //  Copyright (c) 2012 AGDev. All rights reserved.
 //
 

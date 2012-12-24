@@ -29,6 +29,8 @@
 @property (nonatomic, retain) IBOutlet UITextField *bYTextField;
 @property (nonatomic, retain) IBOutlet UITextField *massTextField;
 
+
+- (IBAction)done:(id)sender;
 - (IBAction)switchSwitched:(id)sender;
 - (IBAction)cancel:(id)sender;
 
