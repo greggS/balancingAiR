@@ -125,6 +125,8 @@
             NSLog (@"Mass: %@", rod.mass);
         }
         
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
     }
     else
     {
