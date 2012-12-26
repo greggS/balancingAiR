@@ -45,6 +45,7 @@
         self.addPopoverController = addPopover;
         
         addPopoverFTVC.addPopoverController = self.addPopoverController;
+        addPopoverFTVC.quartzView = self.view;
     
         [self.addPopoverController presentPopoverFromBarButtonItem:sender
                                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

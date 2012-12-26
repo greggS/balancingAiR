@@ -18,6 +18,8 @@
     UITextField *bXTextField;
     UITextField *bYTextField;
     UITextField *massTextField;
+    
+    UIView *quartzView;
 }
 
 @property (nonatomic, retain) IBOutlet UISwitch *massShiftSwitch;
@@ -28,6 +30,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *bXTextField;
 @property (nonatomic, retain) IBOutlet UITextField *bYTextField;
 @property (nonatomic, retain) IBOutlet UITextField *massTextField;
+@property (nonatomic, retain) UIView *quartzView;
 
 
 - (IBAction)done:(id)sender;

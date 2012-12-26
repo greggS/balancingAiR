@@ -83,6 +83,7 @@
     addPopoverSTVC.contentSizeForViewInPopover = CGSizeMake(320, 132);
     RodDetailsViewController *rdVC = [RodDetailsViewController new];
     rdVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    rdVC.quartzView = self.quartzView;
     SupportDetailsViewController *sdVC = [SupportDetailsViewController new];
     sdVC.modalPresentationStyle = UIModalPresentationFormSheet;
     

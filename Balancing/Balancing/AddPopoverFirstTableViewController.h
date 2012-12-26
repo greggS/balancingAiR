@@ -12,9 +12,11 @@
 {
     NSArray *tableTitlesArray;
     UIPopoverController *addPopoverController;
+    UIView *quartzView;
 }
 
 @property (nonatomic, retain) NSArray *tableTitlesArray;
 @property (nonatomic, retain) UIPopoverController *addPopoverController;
+@property (nonatomic, retain) UIView *quartzView;
 
 @end

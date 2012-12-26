@@ -8,6 +8,7 @@
 
 #import "RodDetailsViewController.h"
 #import "Rod.h"
+#import "ViewController.h"
 #import "AppDelegate.h"
 
 @interface RodDetailsViewController ()
@@ -54,13 +55,11 @@
 - (IBAction)done:(id)sender
 {
     NSString *massString = self.massTextField.text;
-    NSLog (@"%@", massString);
     float mass = 0;
     //mass will remain 0 if text field is empty
     if (![massString isEqualToString:@""])
     {
         mass = [massString floatValue];
-        NSLog (@"%f", mass);
     }
     
     //check if mass is not 0 or less
@@ -110,7 +109,6 @@
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         
-        // Test listing all FailedBankInfos from the store
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
                                                   inManagedObjectContext:context];
@@ -125,8 +123,8 @@
             NSLog (@"Mass: %@", rod.mass);
         }
         
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
+        [self.quartzView setNeedsDisplay];
+        [self dismissViewControllerAnimated:YES completion:nil];        
     }
     else
     {
