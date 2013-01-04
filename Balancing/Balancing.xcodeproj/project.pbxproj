@@ -23,6 +23,8 @@
 		AC6F95FB1697824E00C4FC7F /* PinnedSupportSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F95F91697824E00C4FC7F /* PinnedSupportSmall@2x.png */; };
 		AC6F95FE1697850000C4FC7F /* RollerSupportSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F95FC1697850000C4FC7F /* RollerSupportSmall.png */; };
 		AC6F95FF1697850000C4FC7F /* RollerSupportSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F95FD1697850000C4FC7F /* RollerSupportSmall@2x.png */; };
+		AC6F96051697A07000C4FC7F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F96041697A06F00C4FC7F /* Default-Landscape~ipad.png */; };
+		AC6F96071697A0B100C4FC7F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F96061697A0B100C4FC7F /* Default-Landscape@2x~ipad.png */; };
 		ACA25B6D167F737D00F3217D /* AddPopoverSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */; };
 		ACBA11DB167CAC1D004897D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DA167CAC1D004897D8 /* UIKit.framework */; };
 		ACBA11DD167CAC1D004897D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBA11DC167CAC1D004897D8 /* Foundation.framework */; };
@@ -59,6 +61,8 @@
 		AC6F95F91697824E00C4FC7F /* PinnedSupportSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PinnedSupportSmall@2x.png"; sourceTree = "<group>"; };
 		AC6F95FC1697850000C4FC7F /* RollerSupportSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RollerSupportSmall.png; sourceTree = "<group>"; };
 		AC6F95FD1697850000C4FC7F /* RollerSupportSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RollerSupportSmall@2x.png"; sourceTree = "<group>"; };
+		AC6F96041697A06F00C4FC7F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		AC6F96061697A0B100C4FC7F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		ACA25B6B167F737D00F3217D /* AddPopoverSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverSecondTableViewController.h; sourceTree = "<group>"; };
 		ACA25B6C167F737D00F3217D /* AddPopoverSecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverSecondTableViewController.m; sourceTree = "<group>"; };
 		ACBA11D6167CAC1D004897D8 /* Balancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,8 @@
 		AC6F9551168641B300C4FC7F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AC6F96041697A06F00C4FC7F /* Default-Landscape~ipad.png */,
+				AC6F96061697A0B100C4FC7F /* Default-Landscape@2x~ipad.png */,
 				AC6F95F81697824E00C4FC7F /* PinnedSupportSmall.png */,
 				AC6F95F91697824E00C4FC7F /* PinnedSupportSmall@2x.png */,
 				AC6F95FC1697850000C4FC7F /* RollerSupportSmall.png */,
@@ -273,6 +279,8 @@
 				AC6F95FB1697824E00C4FC7F /* PinnedSupportSmall@2x.png in Resources */,
 				AC6F95FE1697850000C4FC7F /* RollerSupportSmall.png in Resources */,
 				AC6F95FF1697850000C4FC7F /* RollerSupportSmall@2x.png in Resources */,
+				AC6F96051697A07000C4FC7F /* Default-Landscape~ipad.png in Resources */,
+				AC6F96071697A0B100C4FC7F /* Default-Landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +378,7 @@
 				GCC_PREFIX_HEADER = "Balancing/Balancing-Prefix.pch";
 				INFOPLIST_FILE = "Balancing/Balancing-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -381,6 +390,7 @@
 				GCC_PREFIX_HEADER = "Balancing/Balancing-Prefix.pch";
 				INFOPLIST_FILE = "Balancing/Balancing-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

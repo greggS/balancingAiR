@@ -21,7 +21,16 @@
     // Override point for customization after application launch.
     UINavigationController *nVC = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
     self.window.rootViewController = nVC;
+    UIImageView*imageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Default-Landscape.png"]];
+    [nVC.view addSubview:imageView];
+    [nVC.view bringSubviewToFront:imageView];
+    
+    // as usual
     [self.window makeKeyAndVisible];
+    
+    //now fade out splash image
+    [UIView transitionWithView:self.window duration:4.0f options:UIViewAnimationOptionTransitionNone animations:^(void){imageView.alpha=0.0f;} completion:^(BOOL finished){[imageView removeFromSuperview];}];
+
     return YES;
 }
 
