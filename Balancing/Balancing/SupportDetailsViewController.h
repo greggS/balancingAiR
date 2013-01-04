@@ -10,16 +10,21 @@
 
 @interface SupportDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
+    NSMutableArray *rodEndPointsArray;
     UITableView *tableView;
     UIButton *rollerSupportButton;
     UIButton *pinnedSupportButton;
     BOOL rollerSupport;
+    
+    UIView *quartzView;
 }
 
+@property (nonatomic, retain) NSMutableArray *rodEndPointsArray;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIButton *rollerSupportButton;
 @property (nonatomic, retain) IBOutlet UIButton *pinnedSupportButton;
 @property (nonatomic) BOOL rollerSupport;
+@property (nonatomic, retain) UIView *quartzView;
 
 - (IBAction)rollerSupportButtonTouched:(id)sender;
 - (IBAction)pinnedSupportButtonTouched:(id)sender;

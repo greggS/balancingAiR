@@ -7,6 +7,10 @@
 //
 
 #import "SupportDetailsViewController.h"
+#import "Support.h"
+#import "Rod.h"
+#import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface SupportDetailsViewController ()
 {
@@ -22,6 +26,33 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.rollerSupport = NO;
+        self.rodEndPointsArray = [NSMutableArray new];
+        
+        //fetching Rod coordinates for tableView
+        AppDelegate *appDelegate =
+        [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *dataContext = [appDelegate managedObjectContext];
+        NSError *error;
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
+                                                  inManagedObjectContext:dataContext];
+        [fetchRequest setEntity:entity];
+        NSArray *fetchedObjects = [dataContext executeFetchRequest:fetchRequest error:&error];
+       
+        BOOL isFirstRod = TRUE; //avoid duplication of points in tableView
+        for (Rod *rod in fetchedObjects) {
+            if (isFirstRod) {
+                CGPoint pointA = CGPointMake([rod.aX floatValue], [rod.aY floatValue]);
+                NSValue *aValue = [NSValue valueWithCGPoint:pointA];
+                [self.rodEndPointsArray  addObject: aValue];
+                isFirstRod = FALSE;
+            }
+            
+            CGPoint pointB = CGPointMake([rod.bX floatValue], [rod.bY floatValue]);
+            NSValue *bValue = [NSValue valueWithCGPoint:pointB];
+            [self.rodEndPointsArray  addObject: bValue];
+        }
+        
     }
     return self;
 }
@@ -73,7 +104,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.rodEndPointsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,6 +115,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    CGPoint point = [(NSValue *)[self.rodEndPointsArray objectAtIndex:indexPath.row] CGPointValue];
+    cell.textLabel.text = [NSString stringWithFormat: @"x: %0.1f y: %0.1f", point.x, point.y];
     return cell;
     
 }
