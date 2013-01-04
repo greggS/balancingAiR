@@ -86,6 +86,7 @@
     rdVC.quartzView = self.quartzView;
     SupportDetailsViewController *sdVC = [SupportDetailsViewController new];
     sdVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    sdVC.quartzView = self.quartzView;
     
     switch (indexPath.row) {
         case 0:

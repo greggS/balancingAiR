@@ -8,7 +8,9 @@
 
 #import "QuartzView.h"
 #import "Rod.h"
+#import "Support.h"
 #import "AppDelegate.h"
+#import <UIKit/UIKit.h>
 
 @implementation QuartzView
 
@@ -24,6 +26,43 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //drawing supports - first because they are images and they have to be behing the drawn paths
+    AppDelegate *appDelegate =
+    [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *dataContext = [appDelegate managedObjectContext];
+
+    NSError *error2;
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"Support"
+                                               inManagedObjectContext:dataContext];
+    [fetchRequest2 setEntity:entity2];
+    NSArray *fetchedObjects2 = [dataContext executeFetchRequest:fetchRequest2 error:&error2];
+    
+    CGContextSetLineWidth(context, 1.0);
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+    
+    for (Support *support in fetchedObjects2) {
+        NSLog (@"Drawing support with parameters:");
+        NSLog (@"x: %@", support.x);
+        NSLog (@"y: %@", support.y);
+        NSLog (@"type: %@", support.type);
+        
+        CGPoint point = CGPointMake([support.x floatValue] + self.frame.size.width/2 - 20,
+                                    [support.y floatValue] + self.frame.size.height/2 - 9);
+        if ([support.type isEqualToString:@"Grounded"])
+        {
+            UIImage *image = [UIImage imageNamed:@"PinnedSupportSmall.png"];
+            [image drawAtPoint:point];
+        }
+        else if ([support.type isEqualToString:@"Roller"])
+        {
+            UIImage *image = [UIImage imageNamed:@"RollerSupportSmall.png"];
+            [image drawAtPoint:point];
+        }
+        
+    }
+
     
     //drawing x and y axis
     CGContextSetLineWidth(context, 1.0);
@@ -46,10 +85,7 @@
     CGContextStrokePath(context);
     
     
-    //test of drawing rods
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *dataContext = [appDelegate managedObjectContext];
+    //drawing rods
     NSError *error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
@@ -57,7 +93,7 @@
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [dataContext executeFetchRequest:fetchRequest error:&error];
     
-    CGContextSetLineWidth(context, 4.0);
+    CGContextSetLineWidth(context, 2.0);
     CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
     
     for (Rod *rod in fetchedObjects) {
@@ -76,9 +112,6 @@
         CGContextAddLineToPoint(context, Bpoint.x, Bpoint.y);
         CGContextStrokePath(context);
     }
-
-    
-    
     
 }
 

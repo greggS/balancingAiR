@@ -14,8 +14,10 @@
 
 @interface SupportDetailsViewController ()
 {
-    
+    NSInteger selectedCell;
 }
+
+@property (nonatomic) NSInteger selectedCell;
 
 @end
 
@@ -26,6 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.rollerSupport = NO;
+        self.selectedCell = -1;
         self.rodEndPointsArray = [NSMutableArray new];
         
         //fetching Rod coordinates for tableView
@@ -60,6 +63,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self performSelector:@selector(highlightButton:) withObject:nil afterDelay:0.0];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -88,6 +92,60 @@
         [self.pinnedSupportButton setHighlighted:YES];
     }
     
+}
+
+- (IBAction)done:(id)sender
+{
+    if (self.selectedCell != -1)
+    {        
+        CGPoint point = [(NSValue *)[self.rodEndPointsArray objectAtIndex:self.selectedCell] CGPointValue];
+            
+        //saving the support with CoreData
+        AppDelegate *appDelegate =
+        [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        Support *newSupport = [NSEntityDescription
+                       insertNewObjectForEntityForName:@"Support"
+                       inManagedObjectContext:context];
+        newSupport.x = [NSNumber numberWithFloat:point.x];
+        newSupport.y = [NSNumber numberWithFloat:point.y];
+        
+        if (self.rollerSupport)
+            newSupport.type = @"Roller";
+        else
+            newSupport.type = @"Grounded";
+        
+        
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Support"
+                                                  inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        for (Support *support in fetchedObjects) {
+            NSLog (@"Created new support with parameters:");
+            NSLog (@"x: %@", support.x);
+            NSLog (@"y: %@", support.y);
+            NSLog (@"%@", support.type);
+        }
+        
+        [self.quartzView setNeedsDisplay];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else {
+        UIAlertView *noSelectedCoordinatesAlert = [[UIAlertView alloc] initWithTitle:@"Select coordinates from the list!"
+                                                              message:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil, nil];
+        [noSelectedCoordinatesAlert show];
+
+    }
 }
 
 - (IBAction)cancel:(id)sender
@@ -125,7 +183,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.selectedCell = indexPath.row;
 }
 
 

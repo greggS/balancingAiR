@@ -26,6 +26,7 @@
 @property (nonatomic) BOOL rollerSupport;
 @property (nonatomic, retain) UIView *quartzView;
 
+- (IBAction)done:(id)sender;
 - (IBAction)rollerSupportButtonTouched:(id)sender;
 - (IBAction)pinnedSupportButtonTouched:(id)sender;
 - (IBAction)cancel:(id)sender;
