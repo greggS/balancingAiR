@@ -13,8 +13,9 @@
 
 @interface CorrectionMass : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * rodLength;
 @property (nonatomic, retain) NSNumber * massValue;
+@property (nonatomic, retain) NSNumber * xEnd;
+@property (nonatomic, retain) NSNumber * yEnd;
 @property (nonatomic, retain) Rod *rod;
 
 @end

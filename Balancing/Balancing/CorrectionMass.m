@@ -12,8 +12,9 @@
 
 @implementation CorrectionMass
 
-@dynamic rodLength;
 @dynamic massValue;
+@dynamic xEnd;
+@dynamic yEnd;
 @dynamic rod;
 
 @end

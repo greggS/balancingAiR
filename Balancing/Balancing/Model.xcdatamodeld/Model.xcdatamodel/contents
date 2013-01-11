@@ -2,7 +2,8 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CorrectionMass" representedClassName="CorrectionMass" syncable="YES">
         <attribute name="massValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="rodLength" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="xEnd" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="yEnd" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="rod" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Rod" inverseName="correctionMass" inverseEntity="Rod" syncable="YES"/>
     </entity>
     <entity name="Rod" representedClassName="Rod" syncable="YES">
@@ -23,6 +24,6 @@
     <elements>
         <element name="Rod" positionX="-1521" positionY="-99" width="128" height="165"/>
         <element name="Support" positionX="-1296" positionY="-99" width="128" height="88"/>
-        <element name="CorrectionMass" positionX="-1298" positionY="108" width="128" height="90"/>
+        <element name="CorrectionMass" positionX="-1298" positionY="108" width="128" height="105"/>
     </elements>
 </model>

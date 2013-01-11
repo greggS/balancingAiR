@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC22905516A06D1700510DD4 /* CorrectionMass.m in Sources */ = {isa = PBXBuildFile; fileRef = AC22905416A06D1700510DD4 /* CorrectionMass.m */; };
 		AC22905816A06D3600510DD4 /* Rod.m in Sources */ = {isa = PBXBuildFile; fileRef = AC22905716A06D3600510DD4 /* Rod.m */; };
+		AC22905B16A090B100510DD4 /* CorrectionMass.m in Sources */ = {isa = PBXBuildFile; fileRef = AC22905A16A090B100510DD4 /* CorrectionMass.m */; };
 		AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC6F951D1685059800C4FC7F /* Model.xcdatamodeld */; };
 		AC6F953F1685C7F100C4FC7F /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F953E1685C7F100C4FC7F /* Support.m */; };
 		AC6F95431685C82700C4FC7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6F95421685C82700C4FC7F /* CoreData.framework */; };
@@ -42,10 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC22905316A06D1700510DD4 /* CorrectionMass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorrectionMass.h; sourceTree = "<group>"; };
-		AC22905416A06D1700510DD4 /* CorrectionMass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorrectionMass.m; sourceTree = "<group>"; };
 		AC22905616A06D3600510DD4 /* Rod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rod.h; sourceTree = "<group>"; };
 		AC22905716A06D3600510DD4 /* Rod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rod.m; sourceTree = "<group>"; };
+		AC22905916A090B100510DD4 /* CorrectionMass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorrectionMass.h; sourceTree = "<group>"; };
+		AC22905A16A090B100510DD4 /* CorrectionMass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorrectionMass.m; sourceTree = "<group>"; };
 		AC6F951E1685059800C4FC7F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		AC6F953D1685C7F100C4FC7F /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
 		AC6F953E1685C7F100C4FC7F /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 				AC22905716A06D3600510DD4 /* Rod.m */,
 				AC6F953D1685C7F100C4FC7F /* Support.h */,
 				AC6F953E1685C7F100C4FC7F /* Support.m */,
-				AC22905316A06D1700510DD4 /* CorrectionMass.h */,
-				AC22905416A06D1700510DD4 /* CorrectionMass.m */,
+				AC22905916A090B100510DD4 /* CorrectionMass.h */,
+				AC22905A16A090B100510DD4 /* CorrectionMass.m */,
 			);
 			name = DataClasses;
 			sourceTree = "<group>";
@@ -306,8 +306,8 @@
 				AC6F953F1685C7F100C4FC7F /* Support.m in Sources */,
 				AC6F95491685CD9F00C4FC7F /* RodDetailsViewController.m in Sources */,
 				AC6F954E1685CDDE00C4FC7F /* SupportDetailsViewController.m in Sources */,
-				AC22905516A06D1700510DD4 /* CorrectionMass.m in Sources */,
 				AC22905816A06D3600510DD4 /* Rod.m in Sources */,
+				AC22905B16A090B100510DD4 /* CorrectionMass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
