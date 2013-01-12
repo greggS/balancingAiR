@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "AddPopoverFirstTableViewController.h"
 #import "QuartzView.h"
+#import "Rod.h"
+#import "Support.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 {
@@ -22,7 +25,16 @@
 {
     [super viewDidLoad];
     self.view = [QuartzView new];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(presentAddPopover:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                             initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                             target:self
+                                             action:@selector(presentAddPopover:)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Calculate correction masses"
+                                              style:UIBarButtonItemStyleBordered
+                                              target:self
+                                              action:@selector(calculate)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +61,38 @@
     
         [self.addPopoverController presentPopoverFromBarButtonItem:sender
                                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+}
+
+- (void)calculate
+{
+    AppDelegate *appDelegate =
+    [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *dataContext = [appDelegate managedObjectContext];
+    
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
+                                              inManagedObjectContext:dataContext];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [dataContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (Rod *rod in fetchedObjects)
+    {
+        if (rod.correctionMass == NULL) {
+            float xEnd;
+            float yEnd;
+            float mass;
+            
+            //mathematics
+            float p;
+            p=sqrtf(abs([rod.aX floatValue] - [rod.bX floatValue])^2 +
+                    abs([rod.aY floatValue] - [rod.bY floatValue])^2);
+            xEnd = (([rod.bX floatValue] - [rod.aX floatValue]) * (p+50) - [rod.bX floatValue]*p)/p;
+            
+            
+            
+        }
     }
 }
 
