@@ -84,13 +84,6 @@
             float yEnd;
             float mass;
             
-            //mathematics
-            float p;
-            p=sqrtf(abs([rod.aX floatValue] - [rod.bX floatValue])^2 +
-                    abs([rod.aY floatValue] - [rod.bY floatValue])^2);
-            xEnd = (([rod.bX floatValue] - [rod.aX floatValue]) * (p+50) - [rod.bX floatValue]*p)/p;
-            
-            
             
         }
     }

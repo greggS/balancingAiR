@@ -1,5 +1,5 @@
 //
-//  Support.h
+//  Point.h
 //  Balancing
 //
 //  Created by Grzegorz Krukiewicz-Gacek on 20.01.2013.
@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EndPoint;
+@class Support;
 
-@interface Support : NSManagedObject
+@interface Point : NSManagedObject
 
-@property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) EndPoint *endPoint;
+@property (nonatomic, retain) NSNumber * x;
+@property (nonatomic, retain) NSNumber * y;
+@property (nonatomic, retain) Support *support;
 
 @end

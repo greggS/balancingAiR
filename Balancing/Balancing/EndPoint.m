@@ -1,18 +1,19 @@
 //
-//  Support.m
+//  EndPoint.m
 //  Balancing
 //
 //  Created by Grzegorz Krukiewicz-Gacek on 20.01.2013.
 //  Copyright (c) 2013 AGDev. All rights reserved.
 //
 
-#import "Support.h"
 #import "EndPoint.h"
+#import "Support.h"
 
 
-@implementation Support
+@implementation EndPoint
 
-@dynamic type;
-@dynamic endPoint;
+@dynamic x;
+@dynamic y;
+@dynamic support;
 
 @end

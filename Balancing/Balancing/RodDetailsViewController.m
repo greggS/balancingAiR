@@ -8,6 +8,7 @@
 
 #import "RodDetailsViewController.h"
 #import "Rod.h"
+#import "EndPoint.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
 
@@ -98,10 +99,14 @@
         Rod *newRod = [NSEntityDescription
                                           insertNewObjectForEntityForName:@"Rod"
                                           inManagedObjectContext:context];
-        newRod.aX = [NSNumber numberWithFloat:aX];
-        newRod.aY = [NSNumber numberWithFloat:aY];
-        newRod.bX = [NSNumber numberWithFloat:bX];
-        newRod.bY = [NSNumber numberWithFloat:bY];
+        EndPoint *aPoint = [NSEntityDescription
+                                          insertNewObjectForEntityForName:@"EndPoint"
+                                          inManagedObjectContext:context];
+        aPoint.x = 
+//        newRod.aX = [NSNumber numberWithFloat:aX];
+//        newRod.aY = [NSNumber numberWithFloat:aY];
+//        newRod.bX = [NSNumber numberWithFloat:bX];
+//        newRod.bY = [NSNumber numberWithFloat:bY];
         newRod.mass = [NSNumber numberWithFloat:mass];
         
         NSError *error;
