@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Support;
+@class Rod, Support;
 
 @interface EndPoint : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * x;
 @property (nonatomic, retain) NSNumber * y;
 @property (nonatomic, retain) Support *support;
+@property (nonatomic, retain) Rod *rod;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "EndPoint.h"
+#import "Rod.h"
 #import "Support.h"
 
 
@@ -15,5 +16,6 @@
 @dynamic x;
 @dynamic y;
 @dynamic support;
+@dynamic rod;
 
 @end

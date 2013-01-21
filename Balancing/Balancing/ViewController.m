@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AddPopoverFirstTableViewController.h"
+#import "ModeSelectViewController.h"
 #import "QuartzView.h"
 #import "Rod.h"
 #import "Support.h"
@@ -24,7 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view = [QuartzView new];
+    QuartzView *quartzView = [QuartzView new];
+    quartzView.currentMechanism = self.currentMechanism;
+    self.view = quartzView;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                              target:self
@@ -35,6 +38,9 @@
                                               style:UIBarButtonItemStyleBordered
                                               target:self
                                               action:@selector(calculate)];
+    [self performSelector:@selector(modeSelect) withObject:nil afterDelay:5];
+    
+    self.currentMechanism = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +64,7 @@
         
         addPopoverFTVC.addPopoverController = self.addPopoverController;
         addPopoverFTVC.quartzView = self.view;
+        addPopoverFTVC.currentMechanism = self.currentMechanism;
     
         [self.addPopoverController presentPopoverFromBarButtonItem:sender
                                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -87,6 +94,40 @@
             
         }
     }
+}
+
+- (void)modeSelect
+{
+    ModeSelectViewController *msVC = [ModeSelectViewController new];
+    msVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    msVC.superViewController = self;
+    [self presentViewController:msVC animated:YES completion:nil];
+}
+
+- (void)createNewMechanism
+{
+    AppDelegate *appDelegate =
+    [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    Mechanism *newMechanism = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"Mechanism"
+                   inManagedObjectContext:context];
+    newMechanism.mechanismID = [NSNumber numberWithInt:[fetchedObjects count] + 1];
+
+    self.currentMechanism = newMechanism;
+}
+
+- (void)presentMechanisms
+{
+    
 }
 
 @end

@@ -102,31 +102,44 @@
         EndPoint *aPoint = [NSEntityDescription
                                           insertNewObjectForEntityForName:@"EndPoint"
                                           inManagedObjectContext:context];
-        aPoint.x = 
-//        newRod.aX = [NSNumber numberWithFloat:aX];
-//        newRod.aY = [NSNumber numberWithFloat:aY];
-//        newRod.bX = [NSNumber numberWithFloat:bX];
-//        newRod.bY = [NSNumber numberWithFloat:bY];
+        aPoint.x = [NSNumber numberWithFloat:aX];
+        aPoint.y = [NSNumber numberWithFloat:aY];
+        aPoint.rod = newRod;
+        EndPoint *bPoint = [NSEntityDescription
+                            insertNewObjectForEntityForName:@"EndPoint"
+                            inManagedObjectContext:context];
+        bPoint.x = [NSNumber numberWithFloat:bX];
+        bPoint.y = [NSNumber numberWithFloat:bY];
+        bPoint.rod = newRod;
+        
+        newRod.aPoint = aPoint;
+        newRod.bPoint = bPoint;
         newRod.mass = [NSNumber numberWithFloat:mass];
+        newRod.mechanism = self.currentMechanism;
+        
+        [self.currentMechanism addRodsObject:newRod];
+        int numberOfRods = [self.currentMechanism.numberOfRods intValue];
+        numberOfRods ++;
+        self.currentMechanism.numberOfRods = [NSNumber numberWithInt:numberOfRods];
         
         NSError *error;
         if (![context save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
-                                                  inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (Rod *rod in fetchedObjects) {
-            NSLog (@"Created new rod with parameters:");
-            NSLog (@"aX: %@", rod.aX);
-            NSLog (@"aY: %@", rod.aY);
-            NSLog (@"bX: %@", rod.bX);
-            NSLog (@"bY: %@", rod.bY);
-            NSLog (@"Mass: %@", rod.mass);
-        }
+//        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
+//                                                  inManagedObjectContext:context];
+//        [fetchRequest setEntity:entity];
+//        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+//        for (Rod *rod in fetchedObjects) {
+//            NSLog (@"Created new rod with parameters:");
+//            NSLog (@"aX: %@", rod.aX);
+//            NSLog (@"aY: %@", rod.aY);
+//            NSLog (@"bX: %@", rod.bX);
+//            NSLog (@"bY: %@", rod.bY);
+//            NSLog (@"Mass: %@", rod.mass);
+//        }
         
         [self.quartzView setNeedsDisplay];
         [self dismissViewControllerAnimated:YES completion:nil];        

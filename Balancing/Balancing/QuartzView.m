@@ -9,6 +9,7 @@
 #import "QuartzView.h"
 #import "Rod.h"
 #import "Support.h"
+#import "EndPoint.h"
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 
@@ -43,24 +44,25 @@
     CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
     
     for (Support *support in fetchedObjects2) {
-        NSLog (@"Drawing support with parameters:");
-        NSLog (@"x: %@", support.x);
-        NSLog (@"y: %@", support.y);
-        NSLog (@"type: %@", support.type);
+        if (support.endPoint.rod.mechanism == self.currentMechanism) {
+            NSLog (@"Drawing support with parameters:");
+            NSLog (@"x: %@", support.endPoint.x);
+            NSLog (@"y: %@", support.endPoint.y);
+            NSLog (@"type: %@", support.type);
         
-        CGPoint point = CGPointMake([support.x floatValue] + self.frame.size.width/2 - 20,
-                                    [support.y floatValue] + self.frame.size.height/2 - 9);
-        if ([support.type isEqualToString:@"Grounded"])
-        {
-            UIImage *image = [UIImage imageNamed:@"PinnedSupportSmall.png"];
-            [image drawAtPoint:point];
+            CGPoint point = CGPointMake([support.endPoint.x floatValue] + self.frame.size.width/2 - 20,
+                                    [support.endPoint.y floatValue] + self.frame.size.height/2 - 9);
+            if ([support.type isEqualToString:@"Grounded"])
+            {
+                UIImage *image = [UIImage imageNamed:@"PinnedSupportSmall.png"];
+                [image drawAtPoint:point];
+            }
+            else if ([support.type isEqualToString:@"Roller"])
+            {
+                UIImage *image = [UIImage imageNamed:@"RollerSupportSmall.png"];
+                [image drawAtPoint:point];
+            }
         }
-        else if ([support.type isEqualToString:@"Roller"])
-        {
-            UIImage *image = [UIImage imageNamed:@"RollerSupportSmall.png"];
-            [image drawAtPoint:point];
-        }
-        
     }
 
     

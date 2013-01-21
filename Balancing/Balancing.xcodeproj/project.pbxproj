@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AC2C89BB16AC42EA00D1D711 /* CorrectionMass.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2C89BA16AC42EA00D1D711 /* CorrectionMass.m */; };
 		AC2C89CF16AC44CA00D1D711 /* Support.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2C89CE16AC44CA00D1D711 /* Support.m */; };
-		AC2C89D216AC44DB00D1D711 /* EndPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2C89D116AC44DB00D1D711 /* EndPoint.m */; };
 		AC2C89D816AC45D200D1D711 /* Mechanism.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2C89D716AC45D200D1D711 /* Mechanism.m */; };
 		AC2C89DB16AC45DE00D1D711 /* Rod.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2C89DA16AC45DE00D1D711 /* Rod.m */; };
 		AC6F951F1685059800C4FC7F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC6F951D1685059800C4FC7F /* Model.xcdatamodeld */; };
@@ -41,6 +40,9 @@
 		ACBA11F4167CAC1E004897D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA11F3167CAC1E004897D8 /* ViewController.m */; };
 		ACBA1202167CB81A004897D8 /* QuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA1201167CB81A004897D8 /* QuartzView.m */; };
 		ACBA120A167D4D6C004897D8 /* AddPopoverFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */; };
+		ACE732EB16AC5E7C00DA7E7A /* ModeSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE732E916AC5E7C00DA7E7A /* ModeSelectViewController.m */; };
+		ACE732EC16AC5E7C00DA7E7A /* ModeSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE732EA16AC5E7C00DA7E7A /* ModeSelectViewController.xib */; };
+		ACE732F016AC6B1700DA7E7A /* EndPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE732EF16AC6B1700DA7E7A /* EndPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +50,6 @@
 		AC2C89BA16AC42EA00D1D711 /* CorrectionMass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorrectionMass.m; sourceTree = "<group>"; };
 		AC2C89CD16AC44CA00D1D711 /* Support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Support.h; sourceTree = "<group>"; };
 		AC2C89CE16AC44CA00D1D711 /* Support.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Support.m; sourceTree = "<group>"; };
-		AC2C89D016AC44DB00D1D711 /* EndPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndPoint.h; sourceTree = "<group>"; };
-		AC2C89D116AC44DB00D1D711 /* EndPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndPoint.m; sourceTree = "<group>"; };
 		AC2C89D616AC45D200D1D711 /* Mechanism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mechanism.h; sourceTree = "<group>"; };
 		AC2C89D716AC45D200D1D711 /* Mechanism.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mechanism.m; sourceTree = "<group>"; };
 		AC2C89D916AC45DE00D1D711 /* Rod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rod.h; sourceTree = "<group>"; };
@@ -93,6 +93,11 @@
 		ACBA1201167CB81A004897D8 /* QuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzView.m; sourceTree = "<group>"; };
 		ACBA1208167D4D6C004897D8 /* AddPopoverFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPopoverFirstTableViewController.h; sourceTree = "<group>"; };
 		ACBA1209167D4D6C004897D8 /* AddPopoverFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPopoverFirstTableViewController.m; sourceTree = "<group>"; };
+		ACE732E816AC5E7C00DA7E7A /* ModeSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeSelectViewController.h; sourceTree = "<group>"; };
+		ACE732E916AC5E7C00DA7E7A /* ModeSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeSelectViewController.m; sourceTree = "<group>"; };
+		ACE732EA16AC5E7C00DA7E7A /* ModeSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModeSelectViewController.xib; sourceTree = "<group>"; };
+		ACE732EE16AC6B1700DA7E7A /* EndPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndPoint.h; sourceTree = "<group>"; };
+		ACE732EF16AC6B1700DA7E7A /* EndPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +118,14 @@
 		AC6F95441685C85900C4FC7F /* DataClasses */ = {
 			isa = PBXGroup;
 			children = (
+				ACE732EE16AC6B1700DA7E7A /* EndPoint.h */,
+				ACE732EF16AC6B1700DA7E7A /* EndPoint.m */,
 				AC2C89D616AC45D200D1D711 /* Mechanism.h */,
 				AC2C89D716AC45D200D1D711 /* Mechanism.m */,
 				AC2C89D916AC45DE00D1D711 /* Rod.h */,
 				AC2C89DA16AC45DE00D1D711 /* Rod.m */,
 				AC2C89CD16AC44CA00D1D711 /* Support.h */,
 				AC2C89CE16AC44CA00D1D711 /* Support.m */,
-				AC2C89D016AC44DB00D1D711 /* EndPoint.h */,
-				AC2C89D116AC44DB00D1D711 /* EndPoint.m */,
 				AC2C89B916AC42EA00D1D711 /* CorrectionMass.h */,
 				AC2C89BA16AC42EA00D1D711 /* CorrectionMass.m */,
 			);
@@ -206,6 +211,9 @@
 				ACBA1201167CB81A004897D8 /* QuartzView.m */,
 				ACBA11F2167CAC1E004897D8 /* ViewController.h */,
 				ACBA11F3167CAC1E004897D8 /* ViewController.m */,
+				ACE732E816AC5E7C00DA7E7A /* ModeSelectViewController.h */,
+				ACE732E916AC5E7C00DA7E7A /* ModeSelectViewController.m */,
+				ACE732EA16AC5E7C00DA7E7A /* ModeSelectViewController.xib */,
 				AC6F95451685CD1100C4FC7F /* AddPopoverViewControllers */,
 				AC6F95501685CDE600C4FC7F /* DetailViewControllers */,
 				ACBA11E1167CAC1E004897D8 /* Supporting Files */,
@@ -296,6 +304,7 @@
 				AC6F95FF1697850000C4FC7F /* RollerSupportSmall@2x.png in Resources */,
 				AC6F96051697A07000C4FC7F /* Default-Landscape~ipad.png in Resources */,
 				AC6F96071697A0B100C4FC7F /* Default-Landscape@2x~ipad.png in Resources */,
+				ACE732EC16AC5E7C00DA7E7A /* ModeSelectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +326,10 @@
 				AC6F954E1685CDDE00C4FC7F /* SupportDetailsViewController.m in Sources */,
 				AC2C89BB16AC42EA00D1D711 /* CorrectionMass.m in Sources */,
 				AC2C89CF16AC44CA00D1D711 /* Support.m in Sources */,
-				AC2C89D216AC44DB00D1D711 /* EndPoint.m in Sources */,
 				AC2C89D816AC45D200D1D711 /* Mechanism.m in Sources */,
 				AC2C89DB16AC45DE00D1D711 /* Rod.m in Sources */,
+				ACE732EB16AC5E7C00DA7E7A /* ModeSelectViewController.m in Sources */,
+				ACE732F016AC6B1700DA7E7A /* EndPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "SupportDetailsViewController.h"
 #import "Support.h"
 #import "Rod.h"
+#import "EndPoint.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
 
@@ -31,29 +32,29 @@
         self.selectedCell = -1;
         self.rodEndPointsArray = [NSMutableArray new];
         
-        //fetching Rod coordinates for tableView
+        //fetching EndPoint coordinates for tableView
         AppDelegate *appDelegate =
         [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *dataContext = [appDelegate managedObjectContext];
         NSError *error;
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Rod"
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"EndPoint"
                                                   inManagedObjectContext:dataContext];
         [fetchRequest setEntity:entity];
         NSArray *fetchedObjects = [dataContext executeFetchRequest:fetchRequest error:&error];
        
         BOOL isFirstRod = TRUE; //avoid duplication of points in tableView
         for (Rod *rod in fetchedObjects) {
-            if (isFirstRod) {
-                CGPoint pointA = CGPointMake([rod.aX floatValue], [rod.aY floatValue]);
+            if (isFirstRod && rod.mechanism == self.currentMechanism) {
+                CGPoint pointA = CGPointMake([rod.aPoint.x floatValue], [rod.aPoint.y floatValue]);
                 NSValue *aValue = [NSValue valueWithCGPoint:pointA];
-                [self.rodEndPointsArray  addObject: aValue];
+                [self.rodEndPointsArray  addObject: rod.aPoint];
                 isFirstRod = FALSE;
             }
             
-            CGPoint pointB = CGPointMake([rod.bX floatValue], [rod.bY floatValue]);
+            CGPoint pointB = CGPointMake([rod.bPoint.x floatValue], [rod.bPoint.y floatValue]);
             NSValue *bValue = [NSValue valueWithCGPoint:pointB];
-            [self.rodEndPointsArray  addObject: bValue];
+            [self.rodEndPointsArray  addObject: rod.bPoint];
         }
         
     }
@@ -98,7 +99,7 @@
 {
     if (self.selectedCell != -1)
     {        
-        CGPoint point = [(NSValue *)[self.rodEndPointsArray objectAtIndex:self.selectedCell] CGPointValue];
+        EndPoint *endPoint = [self.rodEndPointsArray objectAtIndex:self.selectedCell];
             
         //saving the support with CoreData
         AppDelegate *appDelegate =
@@ -107,8 +108,7 @@
         Support *newSupport = [NSEntityDescription
                        insertNewObjectForEntityForName:@"Support"
                        inManagedObjectContext:context];
-        newSupport.x = [NSNumber numberWithFloat:point.x];
-        newSupport.y = [NSNumber numberWithFloat:point.y];
+        newSupport.endPoint = endPoint;
         
         if (self.rollerSupport)
             newSupport.type = @"Roller";
@@ -122,17 +122,17 @@
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Support"
-                                                  inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (Support *support in fetchedObjects) {
-            NSLog (@"Created new support with parameters:");
-            NSLog (@"x: %@", support.x);
-            NSLog (@"y: %@", support.y);
-            NSLog (@"%@", support.type);
-        }
+//        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Support"
+//                                                  inManagedObjectContext:context];
+//        [fetchRequest setEntity:entity];
+//        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+//        for (Support *support in fetchedObjects) {
+//            NSLog (@"Created new support with parameters:");
+//            NSLog (@"x: %@", support.x);
+//            NSLog (@"y: %@", support.y);
+//            NSLog (@"%@", support.type);
+//        }
         
         [self.quartzView setNeedsDisplay];
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -173,8 +173,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    CGPoint point = [(NSValue *)[self.rodEndPointsArray objectAtIndex:indexPath.row] CGPointValue];
-    cell.textLabel.text = [NSString stringWithFormat: @"x: %0.1f y: %0.1f", point.x, point.y];
+    EndPoint *endPoint = [self.rodEndPointsArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat: @"x: %0.1f y: %0.1f", [endPoint.x floatValue], [endPoint.y floatValue]];
     return cell;
     
 }

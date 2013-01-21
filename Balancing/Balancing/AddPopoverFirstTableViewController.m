@@ -84,9 +84,11 @@
     RodDetailsViewController *rdVC = [RodDetailsViewController new];
     rdVC.modalPresentationStyle = UIModalPresentationFormSheet;
     rdVC.quartzView = self.quartzView;
+    rdVC.currentMechanism = self.currentMechanism;
     SupportDetailsViewController *sdVC = [SupportDetailsViewController new];
     sdVC.modalPresentationStyle = UIModalPresentationFormSheet;
     sdVC.quartzView = self.quartzView;
+    sdVC.currentMechanism = self.currentMechanism;
     
     switch (indexPath.row) {
         case 0:

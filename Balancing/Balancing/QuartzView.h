@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mechanism.h"
 
 @interface QuartzView : UIView
+{
+    Mechanism *currentMechanism;
+}
+
+@property (nonatomic, retain) Mechanism *currentMechanism;
 
 @end

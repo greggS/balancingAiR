@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mechanism.h"
 
 @interface RodDetailsViewController : UIViewController
 {
@@ -20,6 +21,7 @@
     UITextField *massTextField;
     
     UIView *quartzView;
+    Mechanism *currentMechanism;
 }
 
 @property (nonatomic, retain) IBOutlet UISwitch *massShiftSwitch;
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *bYTextField;
 @property (nonatomic, retain) IBOutlet UITextField *massTextField;
 @property (nonatomic, retain) UIView *quartzView;
+@property (nonatomic, retain) Mechanism *currentMechanism;
 
 
 - (IBAction)done:(id)sender;

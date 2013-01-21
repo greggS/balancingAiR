@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mechanism.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController 
 {
     UIPopoverController *addPopoverController;
+    Mechanism *currentMechanism;
 }
 
 @property (nonatomic, retain) UIPopoverController *addPopoverController;
+@property (nonatomic, strong) Mechanism *currentMechanism;
+
+- (void)createNewMechanism;
+- (void)presentMechanisms;
 
 @end
